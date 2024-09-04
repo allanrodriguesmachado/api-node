@@ -1,12 +1,17 @@
 {
   "name": "api-node",
   "version": "1.0.0",
-  "main": "server.js",
-  "type": "module",
+  "main": "src/index.js",
+
   "scripts": {
-    "dev": "node --watch src/server.js"
+    "dev": "tsx watch src/server.ts"
   },
-  "author": "Allan Rodrigues",
+  "author": "Allan R.",
   "license": "ISC",
-  "description": "Project API Node.Js"
+  "description": "Creating API Rest Full",
+  "devDependencies": {
+    "@types/node": "^22.5.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4"
+  }
 }
