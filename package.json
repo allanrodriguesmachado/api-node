@@ -5,5 +5,9 @@
   "scripts": {},
   "author": "Allan Rodrigues",
   "license": "ISC",
-  "description": "Creating API Rest"
+  "description": "Creating API Rest",
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "typescript": "^5.6.2"
+  }
 }
