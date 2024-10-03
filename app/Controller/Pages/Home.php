@@ -12,6 +12,7 @@ class Home
     {
         return View::render('pages/home', [
             'title' => 'Home',
+            'description' => 'lorem ipsum',
         ]);
     }
 }

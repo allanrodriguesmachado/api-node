@@ -14,7 +14,13 @@ class View
 
     public static function render($view, $params = []): string
     {
-        $contentView = self::contentView($view, $params);
-        return $contentView;
+        $contentView = self::contentView($view);
+
+        $keys = array_keys($params);
+        $keys = array_map(function ($key) {
+            return '{{' . $key . '}}';
+        }, $keys);
+
+        return str_replace($keys, array_values($params), $contentView);
     }
 }
