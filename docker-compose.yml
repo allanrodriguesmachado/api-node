@@ -1,0 +1,14 @@
+version: "1.0"
+services:
+  web:
+    image: allanrodriguesmachado/php-nginx-node
+    container_name: archi_mvc
+    networks:
+      - net_principal
+    volumes:
+      - .:/var/www
+      - ./docker/nginx/sites:/etc/nginx/sites-available
+    ports:
+      - "81:81"
+networks:
+  net_principal:
