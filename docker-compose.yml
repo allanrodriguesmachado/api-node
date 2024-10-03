@@ -9,6 +9,6 @@ services:
       - .:/var/www
       - ./docker/nginx/sites:/etc/nginx/sites-available
     ports:
-      - "81:81"
+      - "80:80"
 networks:
   net_principal:
