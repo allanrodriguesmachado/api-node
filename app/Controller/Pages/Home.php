@@ -13,7 +13,7 @@ class Home extends Page
     {
         $obOrganization = new Organization();
 
-        $content =  View::render('pages/home', [
+        $content =  View::render('pages/about/home', [
             'description' => $obOrganization->description,
         ]);
 
