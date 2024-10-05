@@ -1,6 +1,7 @@
 <?php
 
 use App\Controller\Pages\Home;
+use App\http\Response;
 use App\http\Router;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -12,7 +13,9 @@ $route = new Router(
 );
 
 $route->get('/', function () {
-    return new \App\http\Response(200, Home::getHome());
+    return new Response(200, Home::getHome());
 });
 
-echo Home::getHome();
+$route->run()->sendResponse();
+
+//echo Home::getHome();
