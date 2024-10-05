@@ -2,6 +2,8 @@
 
 namespace App\http;
 
+use Closure;
+
 class Router
 {
     private string $url;
@@ -24,7 +26,15 @@ class Router
 
     private function addRoute(string $method, string $path, mixed $params)
     {
-      dd($method, $path, $params);
+      foreach ($params as $key => $value) {
+          if ($value instanceof Closure) {
+              $params['controller'] = $value;
+              unset($params[$key]);
+              continue;
+          }
+      }
+      var_dump($params);
+      exit();
     }
     public function get(string $route, mixed $params = [])
     {
