@@ -17,6 +17,7 @@ class Home extends Page
             'description' => $obOrganization->description,
         ]);
 
+
         return Page::getPage('Allan.Dev', $content);
     }
 }
