@@ -2,7 +2,7 @@ version: "1.0"
 services:
   web:
     image: allanrodriguesmachado/php-nginx-node
-    container_name: archi_mvc
+    container_name: full-stack
     networks:
       - net_principal
     volumes:
@@ -10,5 +10,21 @@ services:
       - ./docker/nginx/sites:/etc/nginx/sites-available
     ports:
       - "80:80"
+  db:
+    image: bitnami/postgresql:latest
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: fullstack
+    volumes:
+      - fullstack_pg_data:/bitnami/postgres
+    networks:
+      - net_principal
+
+volumes:
+  fullstack_pg_data:
+
 networks:
   net_principal:
