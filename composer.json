@@ -16,5 +16,8 @@
     "minimum-stability": "dev",
     "require-dev": {
         "symfony/var-dumper": "6.0.x-dev"
-    }
+    },
+  "require": {
+    "ext-pdo": "*"
+  }
 }
